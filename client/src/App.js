@@ -29,10 +29,10 @@ function App() {
 
         const signer = provider.getSigner();
         const address = await signer.getAddress();
-        setAccount(address);
         const contractAddress = "0xd00D84B04100c4FDD17F147bd35D1a6C1707B6E3";
         const contract = new ethers.Contract(contractAddress, Upload.abi, signer);
 
+        setAccount(address);
         setContract(contract);
         setProvider(provider);
         setSigner(signer);
@@ -47,6 +47,8 @@ function App() {
 
   return (
     <>
+
+      Account:{account ? account : "Not connected. Please connect with metamask wallet"}
 
     </>
   );
