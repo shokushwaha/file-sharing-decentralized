@@ -1,0 +1,12 @@
+pinata - nfd media managament service that allows users to host , manage and share files of any kind on any blockchain
+
+ipfs - decentralised p2p network to store files
+
+
+Tech ->
+react.js
+solidity
+pinata
+alchemy
+hardhat
+ether.js
