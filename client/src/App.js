@@ -14,6 +14,7 @@ function App() {
   const [modalOpen, setModalOpen] = useState(false);
 
   useEffect(() => {
+    // ethereum.enable();
     const provider = new ethers.providers.Web3Provider(window.ethereum);
 
     const loadProvider = async () => {
@@ -40,6 +41,7 @@ function App() {
         setProvider(provider);
       } else {
         console.error("Metamask is not installed");
+        alert("Metamask is not installed")
       }
     };
     provider && loadProvider();
@@ -68,7 +70,7 @@ function App() {
         <h1>File Sharing Decentralized</h1>
 
         <p >
-          Account : {account ? account : "Not connected"}
+          Account : {account ? account : "Account not connected....Please connect to MetaMask wallet"}
         </p>
         <FileUpload
           account={account}

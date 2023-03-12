@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import "../css/FileUpload.css";
+
 const FileUpload = ({ contract, account, provider }) => {
     const [file, setFile] = useState(null);
     const [fileName, setFileName] = useState("No image selected");
@@ -16,9 +17,11 @@ const FileUpload = ({ contract, account, provider }) => {
                     url: "https://api.pinata.cloud/pinning/pinFileToIPFS",
                     data: formData,
                     headers: {
-                        'pinata_api_key': `d7ba82bcfbfa5912fc6e`,
+                        'pinata_api_key': `
+                        479f782bb55d8034ce54`,
                         ' pinata_secret_api_key': `
-                        a1d3caf2ad5f26ad32b0610d5ad1019df4d4b4f85b154e62f4152caf4ac00d86`,
+                        
+7d76e7d428299010f49c8ea1d42b4dddde7370ae36fb66e95b72f58cf5e56cce`,
                         "Content-Type": "multipart/form-data",
                     },
                 });
@@ -29,7 +32,7 @@ const FileUpload = ({ contract, account, provider }) => {
                 alert("Unable to upload image to Pinata");
             }
         }
-        alert("Successfully Image Uploaded");
+        alert("Confirm the transaction....");
         setFileName("No image selected");
         setFile(null);
     };
